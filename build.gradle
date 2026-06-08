@@ -20,6 +20,7 @@ dependencies {
     testImplementation 'io.cucumber:cucumber-java'
     testImplementation 'io.cucumber:cucumber-junit-platform-engine'
     testImplementation 'org.junit.platform:junit-platform-suite'
+    implementation 'com.aventstack:extentreports:5.1.1'
 }
 
 test {
