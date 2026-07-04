@@ -1,6 +1,5 @@
 package com.com.saucedemo.steps;
 
-import com.com.saucedemo.function.TextContext;
 import com.com.saucedemo.page.CartPage;
 import com.com.saucedemo.page.ProductsPage;
 import io.cucumber.java.en.And;
@@ -10,11 +9,11 @@ import io.cucumber.java.en.When;
 public class CartSteps {
 
     private ProductsPage productsPage() {
-        return new ProductsPage(TextContext.driver);
+        return new ProductsPage();
     }
 
     private CartPage cartPage() {
-        return new CartPage(TextContext.driver);
+        return new CartPage();
     }
 
     @Given("I have added a product to my cart")

@@ -1,9 +1,7 @@
 package com.com.saucedemo.page;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -22,11 +20,6 @@ public class CartPage extends BasePage {
 
     @FindBy(id = "continue-shopping")
     private WebElement btn_continueShopping;
-
-    public CartPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-    }
 
     /** Asserts that the page title equals "Your Cart", confirming navigation to the cart. */
     public void verifyCartPageLoaded() {

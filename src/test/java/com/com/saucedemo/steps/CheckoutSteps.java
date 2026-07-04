@@ -1,6 +1,5 @@
 package com.com.saucedemo.steps;
 
-import com.com.saucedemo.function.TextContext;
 import com.com.saucedemo.page.CheckoutPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -9,7 +8,7 @@ import io.cucumber.java.en.When;
 public class CheckoutSteps {
 
     private CheckoutPage checkoutPage() {
-        return new CheckoutPage(TextContext.driver);
+        return new CheckoutPage();
     }
 
     @And("I enter first name {string}")

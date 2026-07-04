@@ -1,9 +1,7 @@
 package com.com.saucedemo.page;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,11 +33,6 @@ public class CheckoutPage extends BasePage {
 
     @FindBy(css = ".complete-text")
     private WebElement lbl_completeText;
-
-    public CheckoutPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-    }
 
     /** Types the given first name into the checkout form and asserts the field value. */
     public void enterFirstName(String firstName) {

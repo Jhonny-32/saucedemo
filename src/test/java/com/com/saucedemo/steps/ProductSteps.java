@@ -1,6 +1,5 @@
 package com.com.saucedemo.steps;
 
-import com.com.saucedemo.function.TextContext;
 import com.com.saucedemo.page.ProductDetailPage;
 import com.com.saucedemo.page.ProductsPage;
 import io.cucumber.java.en.And;
@@ -10,7 +9,7 @@ import io.cucumber.java.en.When;
 public class ProductSteps {
 
     private ProductsPage productsPage() {
-        return new ProductsPage(TextContext.driver);
+        return new ProductsPage();
     }
 
     @When("I select {string} from the sort dropdown")
@@ -25,7 +24,7 @@ public class ProductSteps {
 
     @Then("I should see the product detail page")
     public void iShouldSeeTheProductDetailPage() {
-        new ProductDetailPage(TextContext.driver).verifyProductDetailPageLoaded();
+        new ProductDetailPage().verifyProductDetailPageLoaded();
     }
 
     @When("I click {string} on the first product")

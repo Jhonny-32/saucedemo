@@ -1,9 +1,7 @@
 package com.com.saucedemo.page;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -29,11 +27,6 @@ public class ProductsPage extends BasePage {
 
     @FindBy(css = ".shopping_cart_link")
     private WebElement link_cart;
-
-    public ProductsPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-    }
 
     /** Asserts that the page title equals "Products", confirming successful navigation. */
     public void verifyProductsPageLoaded() {

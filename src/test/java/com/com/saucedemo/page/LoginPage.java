@@ -1,9 +1,7 @@
 package com.com.saucedemo.page;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,12 +21,6 @@ public class LoginPage extends BasePage {
 
     @FindBy(css = ".error-message-container h3")
     private WebElement lbl_errorMessage;
-
-    /** Initialises PageFactory elements for this page. */
-    public LoginPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-    }
 
     /** Asserts that the login button is visible, confirming the page is fully loaded. */
     public void verifyLoginPageLoaded() {
@@ -81,7 +73,7 @@ public class LoginPage extends BasePage {
     /** Confirms a successful login by asserting that the Products page is displayed. */
     public void verifySuccessfulLogin() {
         try {
-            new ProductsPage(driver).verifyProductsPageLoaded();
+            new ProductsPage().verifyProductsPageLoaded();
             captureScreenshot("login_successful");
         } catch (Exception e) {
             throw new RuntimeException("Login verification failed: " + e.getMessage());

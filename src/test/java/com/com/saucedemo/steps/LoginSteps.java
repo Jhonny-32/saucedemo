@@ -1,6 +1,5 @@
 package com.com.saucedemo.steps;
 
-import com.com.saucedemo.function.TextContext;
 import com.com.saucedemo.page.LoginPage;
 import com.com.saucedemo.page.ProductsPage;
 import io.cucumber.java.en.And;
@@ -11,7 +10,7 @@ import io.cucumber.java.en.When;
 public class LoginSteps {
 
     private LoginPage loginPage() {
-        return new LoginPage(TextContext.driver);
+        return new LoginPage();
     }
 
     @Given("I navigate to SauceDemo")
@@ -48,7 +47,7 @@ public class LoginSteps {
 
     @And("I should see the products page")
     public void iShouldSeeTheProductsPage() {
-        new ProductsPage(TextContext.driver).verifyProductsPageLoaded();
+        new ProductsPage().verifyProductsPageLoaded();
     }
 
     @Then("I should see an error message")

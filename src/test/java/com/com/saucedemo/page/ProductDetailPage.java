@@ -1,9 +1,7 @@
 package com.com.saucedemo.page;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,11 +18,6 @@ public class ProductDetailPage extends BasePage {
 
     @FindBy(css = ".inventory_details_img")
     private WebElement img_product;
-
-    public ProductDetailPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-    }
 
     /** Asserts that the product name and price are visible, confirming the detail page loaded. */
     public void verifyProductDetailPageLoaded() {

@@ -2,12 +2,14 @@ package com.com.saucedemo.page;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.com.saucedemo.function.TextContext;
 import com.com.saucedemo.utilities.HighlightElement;
 import com.com.saucedemo.utilities.ReportUtils;
 import com.com.saucedemo.utilities.ScreenshotUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,9 +20,14 @@ public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
+    /**
+     * Takes the shared WebDriver from {@link TextContext}, builds the wait and initialises
+     * this page's {@code @FindBy} elements — so subclasses need no constructor at all.
+     */
+    public BasePage() {
+        this.driver = TextContext.driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        PageFactory.initElements(driver, this);
     }
 
     /** Highlights the element with a red border, captures a screenshot while it is visible, then removes the border. */
